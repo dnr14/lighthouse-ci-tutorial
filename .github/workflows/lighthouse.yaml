@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: github checkout
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Node js v16.15.1
         uses: actions/setup-node@v1
@@ -22,10 +22,10 @@ jobs:
         run: |
           yarn build
 
-#      - name: Run Lighthouse CI
-#        env:
-#          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-#        run: |
-#          yarn global add @lhci/cli
-#          lhci autorun || echo "Fail to Run Lighthouse CI!"
+      - name: Run Lighthouse CI
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+        run: |
+          yarn global add @lhci/cli
+          lhci autorun || echo "Fail to Run Lighthouse CI!"
 
