@@ -1,0 +1,31 @@
+name: Run lighthouse CI When Push
+on: [push]
+jobs:
+  lighthouse-ci:
+    name: Lighthouse CI
+    runs-on: ubuntu-latest
+    steps:
+      - name: github checkout
+      - uses: actions/checkout@v2
+
+      - name: Node js v16.15.1
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.15.1
+
+      - name: ======== YANR INSTALL 🧰 ========
+        run: |
+          npm i -g yarn && 
+          yarn install --frozen-lockfile
+
+      - name: ======== YANR BUILD 🔧 ========
+        run: |
+          yarn build
+
+#      - name: Run Lighthouse CI
+#        env:
+#          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+#        run: |
+#          yarn global add @lhci/cli
+#          lhci autorun || echo "Fail to Run Lighthouse CI!"
+
