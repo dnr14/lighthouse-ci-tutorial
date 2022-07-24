@@ -24,5 +24,6 @@ yarn-error.log*
 
 # lighthouse
 .lighthouseci
+lhci_reports
 
 .idea
