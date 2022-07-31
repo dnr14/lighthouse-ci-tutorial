@@ -27,3 +27,6 @@ yarn-error.log*
 lhci_reports
 
 .idea
+
+# puppeteer
+/puppeteer/pdfs/*
