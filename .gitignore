@@ -30,3 +30,5 @@ lhci_reports
 
 # puppeteer
 /puppeteer/pdfs/*
+
+screenshot/*.png
