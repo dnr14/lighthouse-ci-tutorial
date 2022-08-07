@@ -32,3 +32,7 @@ lhci_reports
 /puppeteer/pdfs/*
 
 screenshot/*.png
+
+# next
+.next
+
