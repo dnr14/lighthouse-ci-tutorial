@@ -3,7 +3,7 @@
  * @param {{url: string, options: LHCI.CollectCommand.Options}} context
  */
 
-let counter = 1;
+let counter = 0;
 
 const selector = {
     class(attribute, className){
