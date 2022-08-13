@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-module.exports = ({ github, context, core }) => {
+module.exports = async ({ github, context, core }) => {
   const results = JSON.parse(fs.readFileSync("./lhci_reports/manifest.json"));
 
   let comments = "";
