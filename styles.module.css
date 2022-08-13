@@ -1,0 +1,33 @@
+.hello {
+    font: 15px Helvetica, Arial, sans-serif;
+    background: #eee;
+    padding: 100px;
+    text-align: center;
+    transition: 100ms ease-in background;
+}
+.hello:hover {
+    background: #ccc;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card {
+    padding: 2rem;
+    height: 200px;
+    font-size: 2rem;
+    list-style: none;
+    border-radius: 1rem;
+    border: 1px solid #ccc;
+    opacity: 0;
+    transform: translateX(200px);
+    transition: 150ms ease-in-out all;
+}
+
+.card.visible {
+    transform: translateX(0);
+    opacity: 1;
+}
