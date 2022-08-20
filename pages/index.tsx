@@ -10,13 +10,8 @@ function Main() {
     if (current) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          entry.target.classList.toggle(
-            `${styles.visible}`,
-            entry.isIntersecting
-          );
-          if (entry.isIntersecting) {
-            observer.unobserve(entry.target);
-          }
+          entry.target.classList.toggle(`${styles.visible}`, entry.isIntersecting);
+          if (entry.isIntersecting) observer.unobserve(entry.target);
         });
       });
 

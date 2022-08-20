@@ -1,17 +1,17 @@
-const url = ["http://localhost:3000", "http://localhost:3000/home", "http://localhost:3000/login"];
-const screenShot = ["./screenshot/main.png", "./screenshot/home.png", "./screenshot/login.png"];
+// const url = ["http://localhost:3000", "http://localhost:3000/home", "http://localhost:3000/login"];
+// const screenShot = ["./screenshot/main.png", "./screenshot/home.png", "./screenshot/login.png"];
 
-// const url = [
-//   "https://zaritalk.com/?memberType=LESSOR",
-//   "https://bill.zaritalk.com/?memberType=LESSEE",
-//   "https://gongsil.zaritalk.com/?memberType=REALTOR",
-// ];
+const url = [
+  "https://zaritalk.com/?memberType=LESSOR",
+  "https://bill.zaritalk.com/?memberType=LESSEE",
+  "https://gongsil.zaritalk.com/?memberType=REALTOR",
+];
 
-// const screenShot = [
-//   "./screenshot/zaritalk_lessor.png",
-//   "./screenshot/zaritalk_lessee.png",
-//   "./screenshot/zaritalk_gongsil.png",
-// ];
+const screenShot = [
+  "./screenshot/zaritalk_lessor.png",
+  "./screenshot/zaritalk_lessee.png",
+  "./screenshot/zaritalk_gongsil.png",
+];
 
 //======================================== collect ========================================
 const collect = {
@@ -25,7 +25,9 @@ const collect = {
       "--disable-gpu-sandbox",
       "--display",
     ],
-  }, //https://www.puppeteersharp.com/api/PuppeteerSharp.LaunchOptions.html
+    headless: true,
+  },
+  //https://www.puppeteersharp.com/api/PuppeteerSharp.LaunchOptions.html
   // staticDistDir:"./build",
   numberOfRuns: 1,
   settings: {
@@ -74,13 +76,19 @@ const assert = {
       },
     },
     {
-      matchingUrlPattern: "http://[^/]+/home",
+      matchingUrlPattern: "https://.*/?memberType=LESSOR",
       assertions: {
         interactive: ["warn", { maxNumericValue: 5000 }],
       },
     },
     {
-      matchingUrlPattern: "http://[^/]+/login",
+      matchingUrlPattern: "https://.*/?memberType=LESSEE",
+      assertions: {
+        interactive: ["warn", { maxNumericValue: 5000 }],
+      },
+    },
+    {
+      matchingUrlPattern: "https://[^/]+/?memberType=REALTOR",
       assertions: {
         interactive: ["warn", { maxNumericValue: 5000 }],
       },
